@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from myblog_app.testFload import views
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/',include("myblog_app.urls"))
+    # 步骤1、将URL分层，便于项目管理
+    path('',include("myblog_app.urls")),
 ]
